@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book an Appointment | Bestoph Beauty Studio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .success-msg {
+      display: none;
+      background: rgba(107,45,139,0.15);
+      border: 1px solid var(--purple-light);
+      border-radius: 12px;
+      padding: 20px 25px;
+      color: var(--white);
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .steps-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 45px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+    .step-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.5);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 8px;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s;
+    }
+    .step.active .step-circle {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: var(--white);
+    }
+    .step.done .step-circle {
+      background: #4CAF50;
+      border-color: #4CAF50;
+      color: var(--white);
+    }
+    .step-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .step.active .step-label {
+      color: var(--purple-light);
+      font-weight: 600;
+    }
+    .step::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: -50%;
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,0.15);
+      z-index: 0;
+    }
+    .step:first-child::before { display: none; }
+    .policy-note {
+      background: rgba(255,255,255,0.05);
+      border-left: 3px solid var(--purple-light);
+      padding: 15px 20px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">Bestoph <span>Beauty</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="appointments.html" class="active">Appointments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="appointments.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div>
+      <h1>Book an <span style="color: var(--purple-light);">Appointment</span></h1>
+      <p>Reserve your spot at Bestoph Beauty Studio</p>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <section class="booking-section">
+    <p class="section-label" style="color: rgba(255,255,255,0.7);">Easy Booking</p>
+    <h2 class="section-title" style="color: var(--white);">Schedule Your Visit</h2>
+    <p class="section-sub" style="color: rgba(255,255,255,0.65);">Fill in the form below and we'll confirm your appointment within 24 hours.</p>
+
+    <!-- Steps -->
+    <div class="steps-bar">
+      <div class="step active">
+        <div class="step-circle">1</div>
+        <div class="step-label">Your Info</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">2</div>
+        <div class="step-label">Service</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <div class="step-label">Date & Time</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">4</div>
+        <div class="step-label">Confirm</div>
+      </div>
+    </div>
+
+    <form class="booking-form" id="appointmentForm" onsubmit="handleSubmit(event)">
+
+      <div class="policy-note">
+        📌 <strong>Booking Policy:</strong> Please arrive 10 minutes early. Cancellations must be made at least 24 hours in advance. A 50% deposit may be required for bridal bookings.
+      </div>
+
+      <!-- Personal Info -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name *</label>
+          <input type="text" placeholder="e.g. Abena" required />
+        </div>
+        <div class="form-group">
+          <label>Last Name *</label>
+          <input type="text" placeholder="e.g. Mensah" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" placeholder="e.g. 0244 000 000" required />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com" />
+        </div>
+      </div>
+
+      <!-- Service Selection -->
+      <div class="form-group">
+        <label>Service Category *</label>
+        <select required>
+          <option value="" disabled selected>— Select a category —</option>
+          <option>💇🏾‍♀️ Hair Styling</option>
+          <option>💄 Makeup</option>
+          <option>💅 Nails</option>
+          <option>✨ Skincare &amp; Facials</option>
+          <option>🌟 Multiple Services (Combo)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Specific Service *</label>
+        <input type="text" placeholder="e.g. Knotless Braids, Bridal Makeup, Gel Manicure..." required />
+      </div>
+
+      <!-- Date & Time -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Preferred Date *</label>
+          <input type="date" required min="" id="dateInput" />
+        </div>
+        <div class="form-group">
+          <label>Preferred Time *</label>
+          <select required>
+            <option value="" disabled selected>— Select time —</option>
+            <option>8:00 AM</option>
+            <option>9:00 AM</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>1:00 PM</option>
+            <option>2:00 PM</option>
+            <option>3:00 PM</option>
+            <option>4:00 PM</option>
+            <option>5:00 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Stylist preference -->
+      <div class="form-group">
+        <label>Stylist Preference</label>
+        <select>
+          <option value="">No preference — any available stylist</option>
+          <option>Bestoph (Owner / Lead Stylist)</option>
+          <option>Ama</option>
+          <option>Adwoa</option>
+        </select>
+      </div>
+
+      <!-- Additional Notes -->
+      <div class="form-group">
+        <label>Additional Notes or Requests</label>
+        <textarea placeholder="Any special requests, allergies, or details about your look..."></textarea>
+      </div>
+
+      <!-- How did you hear about us -->
+      <div class="form-group">
+        <label>How Did You Hear About Us?</label>
+        <select>
+          <option value="" disabled selected>— Select one —</option>
+          <option>Instagram</option>
+          <option>Facebook</option>
+          <option>TikTok</option>
+          <option>Friend / Family Referral</option>
+          <option>Walk-in / Saw the Studio</option>
+          <option>Google Search</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <button type="submit" class="form-submit">✦ Confirm Appointment Request</button>
+
+      <div class="success-msg" id="successMsg">
+        🎉 <strong>Thank you! Your appointment request has been received.</strong><br/>
+        We'll confirm your booking via phone or email within 24 hours.<br/>
+        We look forward to seeing you at Bestoph Beauty Studio! 💜
+      </div>
+    </form>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section style="background: var(--gray-light);">
+    <p class="section-label">Before You Come</p>
+    <h2 class="section-title">What to Expect</h2>
+    <p class="section-sub">We want your visit to be smooth and enjoyable from start to finish.</p>
+    <div class="features-grid" style="max-width: 900px;">
+      <div class="feature" style="background: var(--white); border-radius: 16px; padding: 30px;">
+        <div class="feature-icon" style="background: rgba(107,45,139,0.1); border-color: var(--purple-light);">📋</div>
+        <h4 style="color: var(--black);">Confirmation Call</h4>
+        <p style="color: var(--gray);">We'll call or WhatsApp you within 24 hours to confirm your appointment date and time.</p>
+      </div>
+      <div class="feature" style="background: var(--white); border-radius: 16px; padding: 30px;">
+        <div class="feature-icon" style="background: rgba(107,45,139,0.1); border-color: var(--purple-light);">🕐</div>
+        <h4 style="color: var(--black);">Arrive Early</h4>
+        <p style="color: var(--gray);">Please arrive 10–15 minutes before your appointment so we can get started on time.</p>
+      </div>
+      <div class="feature" style="background: var(--white); border-radius: 16px; padding: 30px;">
+        <div class="feature-icon" style="background: rgba(107,45,139,0.1); border-color: var(--purple-light);">💬</div>
+        <h4 style="color: var(--black);">Consultation</h4>
+        <p style="color: var(--gray);">Your stylist will discuss your desired look and give honest recommendations for the best results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Bestoph <span>Beauty Studio</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="appointments.html">Appointments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>&copy; 2026 Bestoph Beauty Studio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('dateInput').setAttribute('min', today);
+
+    // Handle form submission
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('successMsg').style.display = 'block';
+      e.target.querySelector('.form-submit').textContent = '✓ Request Sent!';
+      e.target.querySelector('.form-submit').style.background = '#4CAF50';
+      window.scrollTo({ top: document.getElementById('successMsg').offsetTop - 100, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

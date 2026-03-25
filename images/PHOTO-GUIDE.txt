@@ -1,0 +1,48 @@
+====================================
+ BESTOPH BEAUTY STUDIO — PHOTO GUIDE
+====================================
+
+This folder is where you save all your photos for the website.
+
+HOW TO NAME YOUR FILES
+-----------------------
+Use hyphens instead of spaces. No capital letters.
+
+GOOD examples:
+  box-braids-1.jpg
+  bridal-makeup.jpg
+  gel-nails-pink.jpg
+  facial-treatment.jpg
+
+BAD examples (will cause issues):
+  Box Braids 1.jpg       ← spaces not allowed
+  Bridal Makeup.JPG      ← avoid uppercase extensions
+  photo (1).jpg          ← avoid parentheses
+
+SUPPORTED FILE TYPES
+---------------------
+  .jpg  or  .jpeg   ← Best for photos (recommended)
+  .png              ← Good for photos with transparent backgrounds
+  .webp             ← Smaller file size, great for web
+
+HOW TO ADD A PHOTO TO THE GALLERY PAGE
+----------------------------------------
+1. Save your photo here in this /images/ folder
+2. Open gallery.html in a text editor
+3. Find an empty gallery slot like this:
+      <div class="empty-slot">📷<span>Hair Photo</span></div>
+4. Replace it with:
+      <img src="images/your-photo-name.jpg" alt="Description of photo" />
+
+RECOMMENDED PHOTO SIZES
+-------------------------
+  Gallery photos: at least 600 x 600 pixels (square looks best)
+  Hero/banner:    at least 1400 x 800 pixels
+  Service icons:  400 x 400 pixels or larger
+
+TIP: Keep individual photo file sizes under 500KB for fast loading.
+You can compress photos at: https://tinypng.com (free)
+
+====================================
+ Bestoph Beauty Studio © 2026
+====================================

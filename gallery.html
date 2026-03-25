@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery | Bestoph Beauty Studio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+    .filter-btn {
+      padding: 9px 22px;
+      border-radius: 30px;
+      border: 2px solid #DDD;
+      background: transparent;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: var(--text);
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: var(--white);
+    }
+    .gallery-full-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .gallery-card {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 1;
+      background: var(--gray-light);
+      cursor: pointer;
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .gallery-card:hover img {
+      transform: scale(1.07);
+    }
+    .gallery-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(107,45,139,0.7) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+    }
+    .gallery-card:hover .gallery-card-overlay {
+      opacity: 1;
+    }
+    .gallery-card-label {
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .empty-slot {
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      background: linear-gradient(135deg, #EEE 0%, #E0E0E0 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray);
+      font-size: 2.2rem;
+      gap: 8px;
+    }
+    .empty-slot span {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+    }
+    .upload-info {
+      background: var(--gray-light);
+      border: 2px dashed #CCC;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      max-width: 600px;
+      margin: 50px auto 0;
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .upload-info strong {
+      color: var(--purple);
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">Bestoph <span>Beauty</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="appointments.html">Appointments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="appointments.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div>
+      <h1>Our <span style="color: var(--purple-light);">Gallery</span></h1>
+      <p>Browse our work and get inspired</p>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section style="background: var(--white);">
+    <p class="section-label">Our Portfolio</p>
+    <h2 class="section-title">The Work We're Proud Of</h2>
+    <p class="section-sub">Every look tells a story. Here's a glimpse into the transformations we've created.</p>
+
+    <!-- Filter Buttons -->
+    <div class="filter-bar">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">💇🏾‍♀️ Hair</button>
+      <button class="filter-btn">💄 Makeup</button>
+      <button class="filter-btn">💅 Nails</button>
+      <button class="filter-btn">✨ Skincare</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-full-grid">
+
+      <!-- Slot 1 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Hair Photo</span></div>
+      </div>
+
+      <!-- Slot 2 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Makeup Photo</span></div>
+      </div>
+
+      <!-- Slot 3 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Nails Photo</span></div>
+      </div>
+
+      <!-- Slot 4 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Skincare Photo</span></div>
+      </div>
+
+      <!-- Slot 5 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Hair Photo</span></div>
+      </div>
+
+      <!-- Slot 6 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Makeup Photo</span></div>
+      </div>
+
+      <!-- Slot 7 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Nails Photo</span></div>
+      </div>
+
+      <!-- Slot 8 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Hair Photo</span></div>
+      </div>
+
+      <!-- Slot 9 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Makeup Photo</span></div>
+      </div>
+
+      <!-- Slot 10 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Skincare Photo</span></div>
+      </div>
+
+      <!-- Slot 11 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Nails Photo</span></div>
+      </div>
+
+      <!-- Slot 12 -->
+      <div class="gallery-card">
+        <div class="empty-slot">📷<span>Hair Photo</span></div>
+      </div>
+
+    </div>
+
+    <!-- How to add photos info -->
+    <div class="upload-info">
+      <strong>📁 How to Add Your Photos</strong>
+      Save your photos inside the <code>images/</code> folder in this project,
+      then replace each <code>&lt;div class="empty-slot"&gt;</code> above with:<br/><br/>
+      <code>&lt;img src="images/your-photo.jpg" alt="Description" /&gt;</code>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: var(--purple-dark); text-align: center; padding: 80px 20px;">
+    <h2 style="font-family: 'Playfair Display', serif; color: var(--white); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 15px;">
+      Love What You See?
+    </h2>
+    <p style="color: rgba(255,255,255,0.7); max-width: 420px; margin: 0 auto 30px; line-height: 1.8;">
+      Book your appointment and let us create your own transformation story.
+    </p>
+    <a href="appointments.html" class="btn-primary">Book Now →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Bestoph <span>Beauty Studio</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="appointments.html">Appointments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>&copy; 2026 Bestoph Beauty Studio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Filter button functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Bestoph Beauty Studio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+    .hours-table td {
+      padding: 10px 0;
+      border-bottom: 1px solid #EEE;
+    }
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      color: var(--purple);
+    }
+    .hours-table tr:last-child td {
+      border-bottom: none;
+    }
+    .closed { color: var(--gray) !important; }
+    .map-placeholder {
+      background: linear-gradient(135deg, #EEE, #DDD);
+      border-radius: 16px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray);
+      font-size: 2.5rem;
+      margin-top: 30px;
+      gap: 10px;
+    }
+    .map-placeholder span {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+    }
+    .faq-item {
+      border-bottom: 1px solid #EEE;
+      padding: 20px 0;
+    }
+    .faq-question {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--black);
+      margin-bottom: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--purple);
+      font-family: 'Poppins', sans-serif;
+    }
+    .faq-answer {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.8;
+      display: none;
+    }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-question::after { content: '−'; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">Bestoph <span>Beauty</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="appointments.html">Appointments</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="appointments.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div>
+      <h1>Get in <span style="color: var(--purple-light);">Touch</span></h1>
+      <p>We'd love to hear from you — reach out anytime</p>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section style="background: var(--white);">
+    <div class="contact-grid">
+
+      <!-- Left: Info -->
+      <div class="contact-info">
+        <h3>Visit or Contact Us</h3>
+        <p style="color: var(--gray); font-size: 0.92rem; margin-bottom: 30px; line-height: 1.8;">
+          Have questions about our services, pricing, or availability? Reach out through any of the channels below — we're always happy to help!
+        </p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <h4>Location</h4>
+            <p>Bestoph Beauty Studio<br/>Accra, Ghana</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div class="contact-detail-text">
+            <h4>Phone / WhatsApp</h4>
+            <p>+233 XX XXX XXXX</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📧</div>
+          <div class="contact-detail-text">
+            <h4>Email</h4>
+            <p>hello@bestophbeauty.com</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🕐</div>
+          <div class="contact-detail-text">
+            <h4>Opening Hours</h4>
+            <p>See schedule below</p>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <table class="hours-table">
+          <tr><td>Monday – Friday</td><td>8:00 AM – 7:00 PM</td></tr>
+          <tr><td>Saturday</td><td>8:00 AM – 6:00 PM</td></tr>
+          <tr><td>Sunday</td><td class="closed">Closed</td></tr>
+        </table>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="#" class="social-link" title="Instagram">📸</a>
+          <a href="#" class="social-link" title="Facebook">📘</a>
+          <a href="#" class="social-link" title="TikTok">🎵</a>
+          <a href="#" class="social-link" title="WhatsApp">💬</a>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="map-placeholder">
+          🗺️
+          <span>Google Map will appear here — add your embed code</span>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="contact-form-wrap">
+        <h3 style="margin-bottom: 25px; font-size: 1.4rem;">Send Us a Message</h3>
+        <form id="contactForm" onsubmit="handleContact(event)">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" placeholder="Full name" required />
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" placeholder="e.g. 0244 000 000" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Subject *</label>
+            <input type="text" placeholder="e.g. Inquiry about Bridal Makeup" required />
+          </div>
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea placeholder="How can we help you?" required style="min-height: 130px;"></textarea>
+          </div>
+          <button type="submit" class="form-submit" style="background: var(--purple); color: var(--white); border: none; width: 100%; padding: 14px; border-radius: 30px; font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s;">
+            Send Message ✉️
+          </button>
+          <div id="contactSuccess" style="display:none; margin-top: 15px; background: rgba(107,45,139,0.1); border: 1px solid var(--purple-light); border-radius: 10px; padding: 15px; color: var(--purple-dark); font-size: 0.9rem; text-align: center; line-height: 1.7;">
+            ✅ <strong>Message sent!</strong><br/>We'll get back to you within 24 hours. Thank you! 💜
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background: var(--gray-light);">
+    <p class="section-label">Got Questions?</p>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-sub">Answers to the things our clients ask most often.</p>
+
+    <div style="max-width: 700px; margin: 0 auto;">
+
+      <div class="faq-item">
+        <div class="faq-question">Do I need to book in advance?</div>
+        <div class="faq-answer">Yes, we recommend booking at least 2–3 days in advance to secure your preferred date and time, especially on weekends. Walk-ins are welcome based on availability.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you offer home service visits?</div>
+        <div class="faq-answer">Yes! We offer home visits for bridal and event makeup. Please contact us directly to discuss availability and any additional travel fees.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What payment methods do you accept?</div>
+        <div class="faq-answer">We accept cash, Mobile Money (MTN MoMo, Vodafone Cash, AirtelTigo), and bank transfers. Card payments may be available — please enquire when booking.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How long do services take?</div>
+        <div class="faq-answer">It depends on the service. Simple styles like cornrows may take 1–2 hours, while knotless braids or full bridal packages can take 4–6 hours. We'll give you an estimate at booking.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I bring my own hair extensions or products?</div>
+        <div class="faq-answer">Absolutely! You're welcome to bring your own extensions, weave, or products. We can also supply them for an additional fee if needed.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Bestoph <span>Beauty Studio</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="appointments.html">Appointments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>&copy; 2026 Bestoph Beauty Studio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Contact form submit
+    function handleContact(e) {
+      e.preventDefault();
+      document.getElementById('contactSuccess').style.display = 'block';
+      e.target.querySelector('button').textContent = '✓ Sent!';
+      e.target.querySelector('button').style.background = '#4CAF50';
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
