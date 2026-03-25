@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bestoph Beauty Studio | Hair · Makeup · Nails · Skincare</title>
+  <title>Bestoph Beauty Studio | Hair · Makeup · Nails · Lash · Skincare</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav>
-    <div class="nav-logo">Bestoph <span>Beauty</span></div>
+    <div class="nav-logo">Bestoph <span>Beauty Studio</span></div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="services.html">Services</a></li>
@@ -24,123 +24,240 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">✦ Premium Beauty Experience</div>
-      <h1>Where Beauty Meets <span>Elegance</span></h1>
-      <p>Hair styling, makeup artistry, nails & skincare — all in one luxurious studio designed just for you.</p>
+      <div class="hero-eyebrow">Premium Beauty Studio · Ghana</div>
+      <h1>Where Every<br/>Look Becomes<br/><em>Art</em></h1>
+      <p class="hero-desc">
+        Nails, makeup, lashes, microblading, wigs, piercings and more —
+        crafted by expert hands, designed for your unique glow.
+      </p>
       <div class="hero-buttons">
-        <a href="appointments.html" class="btn-primary">Book an Appointment</a>
-        <a href="services.html" class="btn-outline">View Services</a>
+        <a href="appointments.html" class="btn-primary">Book Appointment</a>
+        <a href="services.html" class="btn-outline">Our Services</a>
+      </div>
+      <div class="scroll-line">Scroll to explore</div>
+    </div>
+
+    <div class="hero-image">
+      <div class="hero-img-wrap">
+        <img src="images/makeup-bridal.jpeg" alt="Bestoph Beauty Studio - Bridal Makeup" class="hero-img-main"
+             onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'>💄<span>Bestoph Beauty</span></div>'"/>
+        <div style="position:absolute; bottom:-20px; right:-20px; background:var(--purple); color:white; padding:18px 22px; font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase;">
+          #GlowWithBestoph
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- STATS BANNER -->
+  <div style="background: var(--purple); display:flex; justify-content:center; gap:80px; padding: 35px 60px; flex-wrap:wrap;">
+    <div style="text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:700; color:white; line-height:1;">500+</div>
+      <div style="font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-top:5px;">Happy Clients</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:700; color:white; line-height:1;">9</div>
+      <div style="font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-top:5px;">Services Offered</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:700; color:white; line-height:1;">5★</div>
+      <div style="font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-top:5px;">Client Ratings</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:700; color:white; line-height:1;">100%</div>
+      <div style="font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-top:5px;">Satisfaction</div>
+    </div>
+  </div>
 
   <!-- SERVICES OVERVIEW -->
-  <section style="background: var(--white);">
-    <p class="section-label">What We Offer</p>
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-sub">From glamorous hair to flawless skin, we offer everything to make you look and feel your best.</p>
+  <section class="services-section">
+    <div class="services-layout">
+      <div class="services-intro">
+        <div class="tag">What We Do</div>
+        <h2 class="sec-title">Beauty Services for Every <em>Occasion</em></h2>
+        <p class="sec-desc">From everyday glam to full bridal transformations — we offer a complete range of professional beauty services to make you look and feel extraordinary.</p>
+        <br/><br/>
+        <a href="services.html" class="btn-primary" style="display:inline-block;">View All Services →</a>
+      </div>
 
-    <div class="services-grid">
-      <a href="services.html#hair" class="service-card" style="text-decoration:none; color:inherit;">
-        <div class="service-icon">💇🏾‍♀️</div>
-        <h3>Hair Styling</h3>
-        <p>Braids, weaves, natural hair care, and everything in between — crafted with precision and care.</p>
-      </a>
-      <a href="services.html#makeup" class="service-card" style="text-decoration:none; color:inherit;">
-        <div class="service-icon">💄</div>
-        <h3>Makeup</h3>
-        <p>Bridal glam, everyday looks, and special event makeup that makes every moment unforgettable.</p>
-      </a>
-      <a href="services.html#nails" class="service-card" style="text-decoration:none; color:inherit;">
-        <div class="service-icon">💅</div>
-        <h3>Nails</h3>
-        <p>Manicures, pedicures, nail art, and gel — beautiful nails from fingertip to toe.</p>
-      </a>
-      <a href="services.html#skincare" class="service-card" style="text-decoration:none; color:inherit;">
-        <div class="service-icon">✨</div>
-        <h3>Skincare & Facials</h3>
-        <p>Rejuvenating facials and targeted skincare treatments for glowing, healthy skin.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section class="why-us">
-    <p class="section-label" style="color: var(--purple-light);">Why Choose Us</p>
-    <h2 class="section-title">The Bestoph Difference</h2>
-    <p class="section-sub" style="color: rgba(255,255,255,0.6);">We don't just make you look good — we make you feel extraordinary.</p>
-    <div class="features-grid">
-      <div class="feature">
-        <div class="feature-icon">🎓</div>
-        <h4>Expert Stylists</h4>
-        <p>Our team is trained, certified, and passionate about the art of beauty.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">🌿</div>
-        <h4>Quality Products</h4>
-        <p>We use only premium, skin-friendly products that protect and enhance your natural beauty.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">🕐</div>
-        <h4>Flexible Hours</h4>
-        <p>Morning, evening, and weekend appointments available to fit your busy schedule.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">💜</div>
-        <h4>Personalized Care</h4>
-        <p>Every client is unique. We tailor every service to your individual needs and style.</p>
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-item-icon">💄</div>
+          <h3>Makeup</h3>
+          <ul class="service-sub-list">
+            <li>Bridal Makeup</li>
+            <li>Event / Party Makeup</li>
+            <li>Photoshoot Makeup</li>
+          </ul>
+        </div>
+        <div class="service-item">
+          <div class="service-item-icon">💅</div>
+          <h3>Nails</h3>
+          <ul class="service-sub-list">
+            <li>Acrylic Nails</li>
+            <li>Gel Nails</li>
+            <li>Pedicure</li>
+          </ul>
+        </div>
+        <div class="service-item">
+          <div class="service-item-icon">👁️</div>
+          <h3>Lash & Brow</h3>
+          <ul class="service-sub-list">
+            <li>Lash Extensions</li>
+            <li>Microblading</li>
+          </ul>
+        </div>
+        <div class="service-item">
+          <div class="service-item-icon">💇‍♀️</div>
+          <h3>Wig & Hair</h3>
+          <ul class="service-sub-list">
+            <li>Frontal Installation</li>
+            <li>Wig Making</li>
+            <li>Wig Styling</li>
+          </ul>
+        </div>
+        <div class="service-item" style="grid-column: span 2;">
+          <div class="service-item-icon">✨</div>
+          <h3>Beauty Enhancements</h3>
+          <ul class="service-sub-list" style="flex-direction:row; flex-wrap:wrap; gap: 8px 30px;">
+            <li>Ear Piercing</li>
+            <li>Nose Piercing</li>
+            <li>Body Piercing</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- GALLERY PREVIEW -->
-  <section style="background: var(--gray-light);">
-    <p class="section-label">Our Work</p>
-    <h2 class="section-title">Gallery</h2>
-    <p class="section-sub">A glimpse into the magic we create at Bestoph Beauty Studio.</p>
-
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <div class="gallery-placeholder">📷<span>Add Photo</span></div>
+  <section class="gallery-section">
+    <div class="gallery-header">
+      <div>
+        <div class="tag">Portfolio</div>
+        <h2 class="sec-title" style="color:white;">Our <em>Work</em></h2>
       </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">📷<span>Add Photo</span></div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">📷<span>Add Photo</span></div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">📷<span>Add Photo</span></div>
-      </div>
+      <a href="gallery.html" class="btn-outline" style="border-color:rgba(255,255,255,0.3);">View All →</a>
     </div>
-    <div class="gallery-center">
-      <a href="gallery.html" class="btn-primary">View Full Gallery</a>
+
+    <div class="gallery-masonry">
+      <div class="g-item tall">
+        <img src="images/nails-purple-bow.jpeg" alt="Purple nail art" onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'>💅<span>Nails</span></div>'"/>
+        <div class="g-item-overlay"><span class="g-item-label">Nail Art</span></div>
+      </div>
+      <div class="g-item">
+        <img src="images/nails-pink-butterfly.jpg" alt="Pink butterfly nails" onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'>💅<span>Nails</span></div>'"/>
+        <div class="g-item-overlay"><span class="g-item-label">3D Nails</span></div>
+      </div>
+      <div class="g-item">
+        <img src="images/nails-black-pink-flower.jpeg" alt="Black and pink nails" onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'>💅<span>Nails</span></div>'"/>
+        <div class="g-item-overlay"><span class="g-item-label">Acrylic Nails</span></div>
+      </div>
+      <div class="g-item tall">
+        <img src="images/makeup-bridal.jpeg" alt="Bridal makeup" onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'>💄<span>Makeup</span></div>'"/>
+        <div class="g-item-overlay"><span class="g-item-label">Bridal Makeup</span></div>
+      </div>
+      <div class="g-item wide">
+        <img src="images/nails-royal-blue-charm.jpg" alt="Royal blue nails" onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'>💅<span>Nails</span></div>'"/>
+        <div class="g-item-overlay"><span class="g-item-label">Gel Nails</span></div>
+      </div>
+      <div class="g-item">
+        <img src="images/nails-red-leopard.jpeg" alt="Red leopard nails" onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'>💅<span>Nails</span></div>'"/>
+        <div class="g-item-overlay"><span class="g-item-label">Nail Art</span></div>
+      </div>
+      <div class="g-item">
+        <img src="images/pedicure-blue.jpg" alt="Blue pedicure" onerror="this.parentElement.innerHTML='<div class=\'g-placeholder\'>💅<span>Pedicure</span></div>'"/>
+        <div class="g-item-overlay"><span class="g-item-label">Pedicure</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- QUICK BOOK CTA -->
-  <section style="background: var(--purple-dark); text-align: center; padding: 80px 20px;">
-    <p class="section-label" style="color: rgba(255,255,255,0.7);">Ready?</p>
-    <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--white); margin-bottom: 15px;">
-      Book Your Appointment Today
-    </h2>
-    <p style="color: rgba(255,255,255,0.7); max-width: 450px; margin: 0 auto 30px; line-height: 1.8;">
-      Treat yourself to a world-class beauty experience. Your glow-up starts here.
-    </p>
-    <a href="appointments.html" class="btn-primary" style="font-size: 1rem; padding: 16px 40px;">Book Now →</a>
+  <!-- WHY US -->
+  <section class="why-section">
+    <div style="text-align:center; margin-bottom:10px;">
+      <div class="tag" style="justify-content:center;">Why Choose Us</div>
+      <h2 class="sec-title" style="text-align:center;">The <em>Bestoph</em> Difference</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <span class="why-icon">🎓</span>
+        <h4>Expert Team</h4>
+        <p>Trained, certified professionals passionate about beauty and dedicated to perfect results every time.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">🌿</span>
+        <h4>Premium Products</h4>
+        <p>We only use high-quality, skin-safe products that enhance your natural beauty without compromise.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">💜</span>
+        <h4>Personalized Service</h4>
+        <p>Every client is unique. We listen carefully and tailor every service to suit your individual style.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">🕐</span>
+        <h4>Flexible Hours</h4>
+        <p>Morning, evening, and weekend slots available. We work around your schedule, not the other way round.</p>
+      </div>
+    </div>
   </section>
+
+  <!-- BOOKING CTA STRIP -->
+  <div class="cta-strip">
+    <h2>Ready for Your <em>Glow-Up?</em><br/>Book Your Appointment Today.</h2>
+    <div style="display:flex; flex-direction:column; gap:12px; align-items:flex-end;">
+      <a href="appointments.html" class="btn-white">Book Now →</a>
+      <div style="font-size:0.78rem; color:rgba(255,255,255,0.6); letter-spacing:1px;">
+        📞 +233 20 880 6567 &nbsp;|&nbsp; 📧 bervelynamoah1995@gmail.com
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Bestoph <span>Beauty Studio</span></div>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="appointments.html">Appointments</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <p>&copy; 2026 Bestoph Beauty Studio. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Bestoph <span>Beauty Studio</span></h3>
+        <p>Your trusted beauty studio for nails, makeup, lashes, wigs and more. Elegance crafted with every service.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/bestoph_beauty_studio" target="_blank" class="social-dot" title="Instagram">📸</a>
+          <a href="https://www.snapchat.com/add/bestoph_beauty" target="_blank" class="social-dot" title="Snapchat">👻</a>
+          <a href="https://www.tiktok.com/@bestoph_beauty_studio" target="_blank" class="social-dot" title="TikTok">🎵</a>
+          <a href="https://wa.me/233208806567" target="_blank" class="social-dot" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="appointments.html">Appointments</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#makeup">Makeup</a></li>
+          <li><a href="services.html#nails">Acrylic & Gel Nails</a></li>
+          <li><a href="services.html#lash">Lash Extensions</a></li>
+          <li><a href="services.html#hair">Wig & Hair</a></li>
+          <li><a href="services.html#piercing">Piercing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+233208806567">+233 20 880 6567</a></li>
+          <li><a href="mailto:bervelynamoah1995@gmail.com">bervelynamoah1995@gmail.com</a></li>
+          <li><a href="https://maps.google.com/?q=Ashongman-Mangoase,Accra">Ashongman-Mangoase, Accra</a></li>
+          <li><a href="#">Mon–Sat: 8am – 7pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Bestoph Beauty Studio. All rights reserved.</p>
+      <p style="font-size:0.8rem; color:rgba(255,255,255,0.2);">#GlowWithBestoph</p>
+    </div>
   </footer>
 
 </body>

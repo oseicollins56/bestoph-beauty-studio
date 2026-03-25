@@ -1,0 +1,36 @@
+================================================
+ BESTOPH BEAUTY STUDIO — SAVE YOUR PHOTOS HERE
+================================================
+
+Save each photo from the chat with EXACTLY these filenames:
+
+NAILS PHOTOS:
+  nails-pink-butterfly.jpg       ← Pink stiletto nails with white 3D butterfly & gold beads
+  nails-pink-gold-spiral.jpg     ← Pink nails with gold spiral/coil designs
+  nails-blue-ombre.jpg           ← Blue ombre stiletto nails with 3D flower
+  nails-pink-gold-coils.jpg      ← Pink nails with gold V-tip and coil nail art
+  nails-sky-blue-swirl.jpg       ← Sky blue swirl French tip nails
+  nails-marble-coffin.jpg        ← Long coffin nails with marble swirl design
+  nails-nude-french.jpg          ← Nude nails with white French tips (square)
+  nails-sky-blue-heart.jpg       ← Sky blue French square nails with red heart
+  nails-black-pink-flower.jpg    ← Black French stiletto nails with pink 3D flower
+  nails-royal-blue-charm.jpg     ← Royal blue coffin nails with gold cross charm
+  nails-white-french-diamonds.jpg← White French square nails with crystal diamonds
+  nails-red-gold-bow.jpg         ← Dark red French tips with gold bow nail art
+  nails-nude-gold-glitter.jpg    ← Nude almond nails with gold glitter tips
+  nails-red-leopard.jpg          ← Red French stiletto nails with leopard print
+  nails-purple-bow.jpg           ← Purple French stiletto nails with white bow
+
+PEDICURE PHOTO:
+  pedicure-blue.jpg              ← Blue French pedicure (feet/toenails)
+
+MAKEUP PHOTO:
+  makeup-bridal.jpg              ← Bridal makeup with stylist applying makeup
+
+HOW TO SAVE:
+1. Right-click each photo in the chat
+2. Click "Save Image As..."
+3. Save it into THIS folder (bestoph-beauty-studio/images/)
+4. Use EXACTLY the filename shown above
+
+================================================

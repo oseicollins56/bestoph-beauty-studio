@@ -9,104 +9,92 @@
     .filter-bar {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 45px;
+      margin-bottom: 50px;
     }
     .filter-btn {
-      padding: 9px 22px;
-      border-radius: 30px;
-      border: 2px solid #DDD;
+      padding: 10px 24px;
+      border: 1px solid rgba(255,255,255,0.2);
       background: transparent;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 500;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       cursor: pointer;
       transition: all 0.3s;
-      color: var(--text);
+      color: rgba(255,255,255,0.5);
+      border-radius: 2px;
     }
-    .filter-btn:hover,
-    .filter-btn.active {
+    .filter-btn:hover, .filter-btn.active {
       background: var(--purple);
       border-color: var(--purple);
       color: var(--white);
     }
-    .gallery-full-grid {
+    .full-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 18px;
-      max-width: 1100px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3px;
+      max-width: 1400px;
       margin: 0 auto;
     }
-    .gallery-card {
-      border-radius: 16px;
+    .gal-card {
+      aspect-ratio: 1;
       overflow: hidden;
       position: relative;
-      aspect-ratio: 1;
-      background: var(--gray-light);
+      background: #111;
       cursor: pointer;
     }
-    .gallery-card img {
-      width: 100%;
-      height: 100%;
+    .gal-card img {
+      width: 100%; height: 100%;
       object-fit: cover;
-      transition: transform 0.4s;
+      transition: transform 0.5s, filter 0.3s;
+      filter: brightness(0.92);
     }
-    .gallery-card:hover img {
+    .gal-card:hover img {
       transform: scale(1.07);
+      filter: brightness(1);
     }
-    .gallery-card-overlay {
+    .gal-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(107,45,139,0.7) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(139,92,246,0.75) 0%, transparent 55%);
       opacity: 0;
       transition: opacity 0.3s;
       display: flex;
       align-items: flex-end;
-      padding: 18px;
+      padding: 16px;
     }
-    .gallery-card:hover .gallery-card-overlay {
-      opacity: 1;
+    .gal-card:hover .gal-overlay { opacity: 1; }
+    .gal-tag {
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
-    .gallery-card-label {
-      color: var(--white);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-    .empty-slot {
-      width: 100%;
-      height: 100%;
-      min-height: 250px;
-      background: linear-gradient(135deg, #EEE 0%, #E0E0E0 100%);
+    .gal-placeholder {
+      width: 100%; height: 100%;
+      min-height: 240px;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1e1040 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: var(--gray);
-      font-size: 2.2rem;
+      color: rgba(139,92,246,0.35);
+      font-size: 2rem;
       gap: 8px;
     }
-    .empty-slot span {
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.82rem;
+    .gal-placeholder span {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(139,92,246,0.25);
     }
-    .upload-info {
-      background: var(--gray-light);
-      border: 2px dashed #CCC;
-      border-radius: 16px;
-      padding: 30px;
-      text-align: center;
-      max-width: 600px;
-      margin: 50px auto 0;
-      color: var(--gray);
-      font-size: 0.9rem;
-      line-height: 1.8;
-    }
-    .upload-info strong {
-      color: var(--purple);
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1rem;
+    @media (max-width: 768px) {
+      .full-gallery { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -114,7 +102,7 @@
 
   <!-- NAVBAR -->
   <nav>
-    <div class="nav-logo">Bestoph <span>Beauty</span></div>
+    <div class="nav-logo">Bestoph <span>Beauty Studio</span></div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
@@ -127,132 +115,215 @@
 
   <!-- PAGE HERO -->
   <div class="page-hero">
-    <div>
-      <h1>Our <span style="color: var(--purple-light);">Gallery</span></h1>
-      <p>Browse our work and get inspired</p>
+    <div class="page-hero-inner">
+      <p>Our Portfolio</p>
+      <h1>Work We're <em>Proud Of</em></h1>
     </div>
   </div>
 
   <!-- GALLERY -->
-  <section style="background: var(--white);">
-    <p class="section-label">Our Portfolio</p>
-    <h2 class="section-title">The Work We're Proud Of</h2>
-    <p class="section-sub">Every look tells a story. Here's a glimpse into the transformations we've created.</p>
-
-    <!-- Filter Buttons -->
+  <section class="gallery-section" style="padding-top: 70px;">
     <div class="filter-bar">
-      <button class="filter-btn active">All</button>
-      <button class="filter-btn">💇🏾‍♀️ Hair</button>
-      <button class="filter-btn">💄 Makeup</button>
-      <button class="filter-btn">💅 Nails</button>
-      <button class="filter-btn">✨ Skincare</button>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="nails">💅 Nails</button>
+      <button class="filter-btn" data-filter="pedicure">🦶 Pedicure</button>
+      <button class="filter-btn" data-filter="makeup">💄 Makeup</button>
     </div>
 
-    <!-- Gallery Grid -->
-    <div class="gallery-full-grid">
+    <div class="full-gallery">
 
-      <!-- Slot 1 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Hair Photo</span></div>
+      <!-- Photo 1: Pink butterfly stiletto -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-pink-butterfly.jpg" alt="Pink stiletto nails with 3D butterfly"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Acrylic Nails</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">3D Acrylic · Pink</span></div>
       </div>
 
-      <!-- Slot 2 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Makeup Photo</span></div>
+      <!-- Photo 2: Pink gold spiral -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-pink-gold-spiral.jpg" alt="Pink nails with gold spiral art"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Nail Art</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Gold Spiral · Pink</span></div>
       </div>
 
-      <!-- Slot 3 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Nails Photo</span></div>
+      <!-- Photo 3: Blue ombre -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-blue-ombre.jpg" alt="Blue ombre stiletto nails"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Gel Nails</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Blue Ombré · 3D</span></div>
       </div>
 
-      <!-- Slot 4 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Skincare Photo</span></div>
+      <!-- Photo 4: Pink gold coils -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-pink-gold-coils.jpg" alt="Pink nails with gold coil art"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Nail Art</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Gold Coil · Pink</span></div>
       </div>
 
-      <!-- Slot 5 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Hair Photo</span></div>
+      <!-- Photo 5: Sky blue swirl -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-sky-blue-swirl.jpg" alt="Sky blue swirl French nails"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Gel Nails</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Sky Blue · Swirl</span></div>
       </div>
 
-      <!-- Slot 6 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Makeup Photo</span></div>
+      <!-- Photo 6: Pedicure blue -->
+      <div class="gal-card" data-cat="pedicure">
+        <img src="images/pedicure-blue.jpg" alt="Blue French pedicure"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>🦶<span>Pedicure</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Blue French · Pedicure</span></div>
       </div>
 
-      <!-- Slot 7 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Nails Photo</span></div>
+      <!-- Photo 7: Marble coffin -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-marble-coffin.jpg" alt="Marble coffin nails"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Acrylic Nails</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Marble · Coffin</span></div>
       </div>
 
-      <!-- Slot 8 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Hair Photo</span></div>
+      <!-- Photo 8: Nude French white -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-nude-french.jpeg" alt="Nude nails with white French tips"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>French Tips</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Nude · French Tips</span></div>
       </div>
 
-      <!-- Slot 9 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Makeup Photo</span></div>
+      <!-- Photo 9: Sky blue heart -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-sky-blue-heart.jpeg" alt="Sky blue nails with red heart"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Nail Art</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Sky Blue · Heart Art</span></div>
       </div>
 
-      <!-- Slot 10 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Skincare Photo</span></div>
+      <!-- Photo 10: Black pink flower -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-black-pink-flower.jpeg" alt="Black French nails with pink 3D flower"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>3D Nails</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Black · Pink 3D Flower</span></div>
       </div>
 
-      <!-- Slot 11 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Nails Photo</span></div>
+      <!-- Photo 11: Royal blue charm -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-royal-blue-charm.jpg" alt="Royal blue nails with gold charm"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Gel Nails</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Royal Blue · Gold Charm</span></div>
       </div>
 
-      <!-- Slot 12 -->
-      <div class="gallery-card">
-        <div class="empty-slot">📷<span>Hair Photo</span></div>
+      <!-- Photo 12: White French diamonds -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-white-french-diamonds.jpg" alt="White French nails with crystal diamonds"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>French Tips</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">White French · Crystals</span></div>
+      </div>
+
+      <!-- Photo 13: Dark red gold bow -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-red-gold-bow.jpg" alt="Dark red nails with gold bow art"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Nail Art</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Dark Red · Gold Bow</span></div>
+      </div>
+
+      <!-- Photo 14: Nude gold glitter -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-nude-gold-glitter.jpg" alt="Nude almond nails with gold glitter tips"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Gel Nails</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Nude · Gold Glitter</span></div>
+      </div>
+
+      <!-- Photo 15: Red leopard -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-red-leopard.jpeg" alt="Red French nails with leopard print"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Nail Art</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Red · Leopard Print</span></div>
+      </div>
+
+      <!-- Photo 16: Purple bow -->
+      <div class="gal-card" data-cat="nails">
+        <img src="images/nails-purple-bow.jpeg" alt="Purple French nails with white bow"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💅<span>Nail Art</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Purple · 3D Bow</span></div>
+      </div>
+
+      <!-- Photo 17: Bridal makeup -->
+      <div class="gal-card" data-cat="makeup" style="grid-column: span 2;">
+        <img src="images/makeup-bridal.jpeg" alt="Bridal makeup by Bestoph Beauty"
+          onerror="this.parentElement.innerHTML='<div class=\'gal-placeholder\'>💄<span>Bridal Makeup</span></div>'"/>
+        <div class="gal-overlay"><span class="gal-tag">Bridal Makeup</span></div>
       </div>
 
     </div>
 
-    <!-- How to add photos info -->
-    <div class="upload-info">
-      <strong>📁 How to Add Your Photos</strong>
-      Save your photos inside the <code>images/</code> folder in this project,
-      then replace each <code>&lt;div class="empty-slot"&gt;</code> above with:<br/><br/>
-      <code>&lt;img src="images/your-photo.jpg" alt="Description" /&gt;</code>
+    <!-- CTA -->
+    <div style="text-align:center; margin-top:60px;">
+      <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:25px;">Like what you see?</p>
+      <a href="appointments.html" class="btn-primary">Book Your Appointment</a>
     </div>
-  </section>
-
-  <!-- CTA -->
-  <section style="background: var(--purple-dark); text-align: center; padding: 80px 20px;">
-    <h2 style="font-family: 'Playfair Display', serif; color: var(--white); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 15px;">
-      Love What You See?
-    </h2>
-    <p style="color: rgba(255,255,255,0.7); max-width: 420px; margin: 0 auto 30px; line-height: 1.8;">
-      Book your appointment and let us create your own transformation story.
-    </p>
-    <a href="appointments.html" class="btn-primary">Book Now →</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Bestoph <span>Beauty Studio</span></div>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="appointments.html">Appointments</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <p>&copy; 2026 Bestoph Beauty Studio. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Bestoph <span>Beauty Studio</span></h3>
+        <p>Your trusted beauty studio for nails, makeup, lashes, wigs and more.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/bestoph_beauty_studio" target="_blank" class="social-dot" title="Instagram">📸</a>
+          <a href="https://www.snapchat.com/add/bestoph_beauty" target="_blank" class="social-dot" title="Snapchat">👻</a>
+          <a href="https://www.tiktok.com/@bestoph_beauty_studio" target="_blank" class="social-dot" title="TikTok">🎵</a>
+          <a href="https://wa.me/233208806567" target="_blank" class="social-dot" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="appointments.html">Appointments</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#makeup">Makeup</a></li>
+          <li><a href="services.html#nails">Acrylic & Gel Nails</a></li>
+          <li><a href="services.html#lash">Lash Extensions</a></li>
+          <li><a href="services.html#hair">Wig & Hair</a></li>
+          <li><a href="services.html#piercing">Piercing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+233208806567">+233 20 880 6567</a></li>
+          <li><a href="mailto:bervelynamoah1995@gmail.com">bervelynamoah1995@gmail.com</a></li>
+          <li><a href="https://maps.google.com/?q=Ashongman-Mangoase,Accra">Ashongman-Mangoase, Accra</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Bestoph Beauty Studio. All rights reserved.</p>
+      <p style="font-size:0.8rem; color:rgba(255,255,255,0.2);">#GlowWithBestoph</p>
+    </div>
   </footer>
 
   <script>
-    // Filter button functionality
     const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.gal-card');
+
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.cat === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
   </script>

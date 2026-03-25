@@ -5,78 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us | Bestoph Beauty Studio</title>
   <link rel="stylesheet" href="styles.css"/>
-  <style>
-    .hours-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      font-size: 0.9rem;
-    }
-    .hours-table td {
-      padding: 10px 0;
-      border-bottom: 1px solid #EEE;
-    }
-    .hours-table td:last-child {
-      text-align: right;
-      font-weight: 600;
-      color: var(--purple);
-    }
-    .hours-table tr:last-child td {
-      border-bottom: none;
-    }
-    .closed { color: var(--gray) !important; }
-    .map-placeholder {
-      background: linear-gradient(135deg, #EEE, #DDD);
-      border-radius: 16px;
-      height: 250px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--gray);
-      font-size: 2.5rem;
-      margin-top: 30px;
-      gap: 10px;
-    }
-    .map-placeholder span {
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.85rem;
-    }
-    .faq-item {
-      border-bottom: 1px solid #EEE;
-      padding: 20px 0;
-    }
-    .faq-question {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      color: var(--black);
-      margin-bottom: 8px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .faq-question::after {
-      content: '+';
-      font-size: 1.2rem;
-      color: var(--purple);
-      font-family: 'Poppins', sans-serif;
-    }
-    .faq-answer {
-      font-size: 0.9rem;
-      color: var(--gray);
-      line-height: 1.8;
-      display: none;
-    }
-    .faq-item.open .faq-answer { display: block; }
-    .faq-item.open .faq-question::after { content: '−'; }
-  </style>
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav>
-    <div class="nav-logo">Bestoph <span>Beauty</span></div>
+    <div class="nav-logo">Bestoph <span>Beauty Studio</span></div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
@@ -89,106 +23,101 @@
 
   <!-- PAGE HERO -->
   <div class="page-hero">
-    <div>
-      <h1>Get in <span style="color: var(--purple-light);">Touch</span></h1>
-      <p>We'd love to hear from you — reach out anytime</p>
+    <div class="page-hero-inner">
+      <p>We'd Love to Hear From You</p>
+      <h1>Get in <em>Touch</em></h1>
     </div>
   </div>
 
   <!-- CONTACT SECTION -->
   <section style="background: var(--white);">
-    <div class="contact-grid">
+    <div class="contact-layout">
 
-      <!-- Left: Info -->
-      <div class="contact-info">
-        <h3>Visit or Contact Us</h3>
-        <p style="color: var(--gray); font-size: 0.92rem; margin-bottom: 30px; line-height: 1.8;">
-          Have questions about our services, pricing, or availability? Reach out through any of the channels below — we're always happy to help!
-        </p>
+      <!-- LEFT: Contact Info -->
+      <div>
+        <div class="tag">Contact Info</div>
+        <h2 class="sec-title">Visit or <em>Reach Us</em></h2>
+        <p class="sec-desc" style="margin-bottom:45px;">Whether you have questions about our services, pricing, or just want to say hello — we're always happy to help!</p>
 
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📍</div>
-          <div class="contact-detail-text">
-            <h4>Location</h4>
-            <p>Bestoph Beauty Studio<br/>Accra, Ghana</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">
+              <h4>Phone / WhatsApp</h4>
+              <p>+233 20 880 6567</p>
+            </div>
           </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📞</div>
-          <div class="contact-detail-text">
-            <h4>Phone / WhatsApp</h4>
-            <p>+233 XX XXX XXXX</p>
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p>bervelynamoah1995@gmail.com</p>
+            </div>
           </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📧</div>
-          <div class="contact-detail-text">
-            <h4>Email</h4>
-            <p>hello@bestophbeauty.com</p>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">🕐</div>
-          <div class="contact-detail-text">
-            <h4>Opening Hours</h4>
-            <p>See schedule below</p>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+              <h4>Location</h4>
+              <p>Bestoph Beauty Studio<br/>Ashongman-Mangoase, Accra</p>
+            </div>
           </div>
         </div>
 
         <!-- Hours -->
-        <table class="hours-table">
-          <tr><td>Monday – Friday</td><td>8:00 AM – 7:00 PM</td></tr>
-          <tr><td>Saturday</td><td>8:00 AM – 6:00 PM</td></tr>
-          <tr><td>Sunday</td><td class="closed">Closed</td></tr>
-        </table>
-
-        <!-- Social Links -->
-        <div class="social-links">
-          <a href="#" class="social-link" title="Instagram">📸</a>
-          <a href="#" class="social-link" title="Facebook">📘</a>
-          <a href="#" class="social-link" title="TikTok">🎵</a>
-          <a href="#" class="social-link" title="WhatsApp">💬</a>
+        <div style="margin-top:40px;">
+          <div class="tag">Opening Hours</div>
+          <div class="hours-grid">
+            <div class="hours-row"><span>Monday – Friday</span><span>8:00 AM – 7:00 PM</span></div>
+            <div class="hours-row"><span>Saturday</span><span>8:00 AM – 6:00 PM</span></div>
+            <div class="hours-row closed-day"><span>Sunday</span><span>Closed</span></div>
+          </div>
         </div>
 
-        <!-- Map placeholder -->
-        <div class="map-placeholder">
-          🗺️
-          <span>Google Map will appear here — add your embed code</span>
+        <!-- Social -->
+        <div style="margin-top:35px;">
+          <div class="tag">Follow Us</div>
+          <div class="social-row" style="margin-top:15px;">
+            <a href="#" class="social-dot" title="Instagram" style="border-color:rgba(0,0,0,0.15); color:var(--purple);">📸</a>
+            <a href="#" class="social-dot" title="Facebook" style="border-color:rgba(0,0,0,0.15); color:var(--purple);">📘</a>
+            <a href="#" class="social-dot" title="TikTok" style="border-color:rgba(0,0,0,0.15); color:var(--purple);">🎵</a>
+            <a href="#" class="social-dot" title="WhatsApp" style="border-color:rgba(0,0,0,0.15); color:var(--purple);">💬</a>
+          </div>
         </div>
       </div>
 
-      <!-- Right: Contact Form -->
-      <div class="contact-form-wrap">
-        <h3 style="margin-bottom: 25px; font-size: 1.4rem;">Send Us a Message</h3>
+      <!-- RIGHT: Contact Form -->
+      <div class="contact-form-box">
+        <div class="tag">Send a Message</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; margin-bottom:30px; color:var(--black);">How Can We <em style="color:var(--purple); font-style:italic;">Help?</em></h3>
+
         <form id="contactForm" onsubmit="handleContact(event)">
-          <div class="form-group">
-            <label>Your Name *</label>
-            <input type="text" placeholder="Full name" required />
+          <div class="fld">
+            <label>Full Name *</label>
+            <input type="text" placeholder="Your name" required />
           </div>
-          <div class="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" placeholder="e.g. 0244 000 000" required />
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div class="fld">
+              <label>Phone *</label>
+              <input type="tel" placeholder="e.g. 0244 000 000" required />
+            </div>
+            <div class="fld">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" />
+            </div>
           </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" placeholder="your@email.com" />
-          </div>
-          <div class="form-group">
+          <div class="fld">
             <label>Subject *</label>
-            <input type="text" placeholder="e.g. Inquiry about Bridal Makeup" required />
+            <input type="text" placeholder="e.g. Enquiry about Lash Extensions" required />
           </div>
-          <div class="form-group">
+          <div class="fld">
             <label>Message *</label>
-            <textarea placeholder="How can we help you?" required style="min-height: 130px;"></textarea>
+            <textarea placeholder="How can we help you?" required style="min-height:130px;"></textarea>
           </div>
-          <button type="submit" class="form-submit" style="background: var(--purple); color: var(--white); border: none; width: 100%; padding: 14px; border-radius: 30px; font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s;">
-            Send Message ✉️
+          <button type="submit" class="submit-btn" style="background:var(--purple); color:white; border:none; width:100%; padding:14px; font-family:'Jost',sans-serif; font-size:0.82rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; cursor:pointer; border-radius:2px; transition:all 0.3s;">
+            Send Message →
           </button>
-          <div id="contactSuccess" style="display:none; margin-top: 15px; background: rgba(107,45,139,0.1); border: 1px solid var(--purple-light); border-radius: 10px; padding: 15px; color: var(--purple-dark); font-size: 0.9rem; text-align: center; line-height: 1.7;">
-            ✅ <strong>Message sent!</strong><br/>We'll get back to you within 24 hours. Thank you! 💜
+          <div id="contactSuccess" class="success-box">
+            ✅ <strong>Message sent!</strong> We'll get back to you within 24 hours. Thank you! 💜
           </div>
         </form>
       </div>
@@ -197,67 +126,99 @@
   </section>
 
   <!-- FAQ -->
-  <section style="background: var(--gray-light);">
-    <p class="section-label">Got Questions?</p>
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p class="section-sub">Answers to the things our clients ask most often.</p>
+  <section style="background: var(--off-white);">
+    <div style="text-align:center; margin-bottom:10px;">
+      <div class="tag" style="justify-content:center;">Got Questions?</div>
+      <h2 class="sec-title" style="text-align:center;">Frequently Asked <em>Questions</em></h2>
+    </div>
 
-    <div style="max-width: 700px; margin: 0 auto;">
-
+    <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-question">Do I need to book in advance?</div>
-        <div class="faq-answer">Yes, we recommend booking at least 2–3 days in advance to secure your preferred date and time, especially on weekends. Walk-ins are welcome based on availability.</div>
+        <div class="faq-q">Do I need to book in advance?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes, we recommend booking 2–3 days in advance to secure your preferred date and time. Walk-ins are welcome subject to availability.</div>
       </div>
-
       <div class="faq-item">
-        <div class="faq-question">Do you offer home service visits?</div>
-        <div class="faq-answer">Yes! We offer home visits for bridal and event makeup. Please contact us directly to discuss availability and any additional travel fees.</div>
+        <div class="faq-q">Do you offer home or on-location service?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes! We offer home visits for bridal makeup and certain services. Please contact us directly to discuss availability and travel fees.</div>
       </div>
-
       <div class="faq-item">
-        <div class="faq-question">What payment methods do you accept?</div>
-        <div class="faq-answer">We accept cash, Mobile Money (MTN MoMo, Vodafone Cash, AirtelTigo), and bank transfers. Card payments may be available — please enquire when booking.</div>
+        <div class="faq-q">What payment methods do you accept?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">We accept cash and Mobile Money (MTN MoMo, Vodafone Cash, AirtelTigo). Please enquire about card payments when booking.</div>
       </div>
-
       <div class="faq-item">
-        <div class="faq-question">How long do services take?</div>
-        <div class="faq-answer">It depends on the service. Simple styles like cornrows may take 1–2 hours, while knotless braids or full bridal packages can take 4–6 hours. We'll give you an estimate at booking.</div>
+        <div class="faq-q">How long do lash extensions last?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">Lash extensions typically last 3–4 weeks with proper care. We recommend infills every 2–3 weeks to keep them looking full and fresh.</div>
       </div>
-
       <div class="faq-item">
-        <div class="faq-question">Can I bring my own hair extensions or products?</div>
-        <div class="faq-answer">Absolutely! You're welcome to bring your own extensions, weave, or products. We can also supply them for an additional fee if needed.</div>
+        <div class="faq-q">What is microblading and how long does it last?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">Microblading is a semi-permanent eyebrow technique that creates natural-looking hair strokes. Results last 12–18 months depending on skin type and aftercare. A touch-up at 4–6 weeks is recommended.</div>
       </div>
-
+      <div class="faq-item">
+        <div class="faq-q">Can I supply my own hair for wig making?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">Absolutely! You're welcome to supply your own bundles and closure/frontal. We can also source the hair for you at an additional cost.</div>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Bestoph <span>Beauty Studio</span></div>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="appointments.html">Appointments</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <p>&copy; 2026 Bestoph Beauty Studio. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Bestoph <span>Beauty Studio</span></h3>
+        <p>Your trusted beauty studio for nails, makeup, lashes, wigs and more.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/bestoph_beauty_studio" target="_blank" class="social-dot" title="Instagram">📸</a>
+          <a href="https://www.snapchat.com/add/bestoph_beauty" target="_blank" class="social-dot" title="Snapchat">👻</a>
+          <a href="https://www.tiktok.com/@bestoph_beauty_studio" target="_blank" class="social-dot" title="TikTok">🎵</a>
+          <a href="https://wa.me/233208806567" target="_blank" class="social-dot" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="appointments.html">Appointments</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#makeup">Makeup</a></li>
+          <li><a href="services.html#nails">Acrylic & Gel Nails</a></li>
+          <li><a href="services.html#lash">Lash Extensions</a></li>
+          <li><a href="services.html#hair">Wig & Hair</a></li>
+          <li><a href="services.html#piercing">Piercing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+233208806567">+233 20 880 6567</a></li>
+          <li><a href="mailto:bervelynamoah1995@gmail.com">bervelynamoah1995@gmail.com</a></li>
+          <li><a href="https://maps.google.com/?q=Ashongman-Mangoase,Accra">Ashongman-Mangoase, Accra</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Bestoph Beauty Studio. All rights reserved.</p>
+      <p style="font-size:0.8rem; color:rgba(255,255,255,0.2);">#GlowWithBestoph</p>
+    </div>
   </footer>
 
   <script>
-    // Contact form submit
     function handleContact(e) {
       e.preventDefault();
       document.getElementById('contactSuccess').style.display = 'block';
       e.target.querySelector('button').textContent = '✓ Sent!';
       e.target.querySelector('button').style.background = '#4CAF50';
     }
-
-    // FAQ accordion
     document.querySelectorAll('.faq-item').forEach(item => {
-      item.querySelector('.faq-question').addEventListener('click', () => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
         item.classList.toggle('open');
+        item.querySelector('.faq-toggle').textContent = item.classList.contains('open') ? '−' : '+';
       });
     });
   </script>
